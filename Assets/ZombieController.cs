@@ -13,8 +13,14 @@ public class ZombieController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown (KeyCode.W)) {
+//		if (Input.GetKey (KeyCode.H)) {
+//			transform.Translate (Vector3.forward * 0.03f);
+//		}
+//
+
+		if (Input.GetKey (KeyCode.W)) {
 //			_animator.SetInteger ("state", 1);
+			transform.Translate (Vector3.forward * 0.03f);
 			_animator.SetBool ("isAttact", true);
 			_animator.SetBool ("isBack", false);
 			_animator.SetBool ("isLeft", false);

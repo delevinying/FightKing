@@ -1,0 +1,16 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Run.cs">
+    <Files>
+      <File FileName="Assets/ZombieController.cs" Line="24" Column="40" />
+      <File FileName="Assets/Sprites/MazeManController.cs" Line="12" Column="3" />
+      <File FileName="Assets/Path.cs" Line="39" Column="2" />
+      <File FileName="Assets/VehicleFollowing.cs" Line="83" Column="5" />
+      <File FileName="Assets/Run.cs" Line="13" Column="6" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

@@ -65,3 +65,7 @@
 /Users/easonzhou/Desktop/FightKing/FightKing/Temp/bin/Debug/Unity.CecilTools.dll
 /Users/easonzhou/Desktop/FightKing/FightKing/Temp/bin/Debug/Unity.Cecil.Pdb.dll
 /Users/easonzhou/Desktop/FightKing/FightKing/Temp/bin/Debug/Unity.Cecil.Mdb.dll
+/Users/easonzhou/Desktop/FightKing/FightKing/Temp/bin/Debug/Assembly-CSharp.dll.mdb
+/Users/easonzhou/Desktop/FightKing/FightKing/Temp/bin/Debug/Assembly-CSharp.dll
+/Users/easonzhou/Desktop/FightKing/FightKing/obj/Debug/Assembly-CSharp.dll
+/Users/easonzhou/Desktop/FightKing/FightKing/obj/Debug/Assembly-CSharp.dll.mdb

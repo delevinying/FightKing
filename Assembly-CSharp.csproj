@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Path.cs" />
+     <Compile Include="Assets\RandomAi.cs" />
      <Compile Include="Assets\Run.cs" />
      <Compile Include="Assets\Sprites\MazeManController.cs" />
      <Compile Include="Assets\VehicleFollowing.cs" />

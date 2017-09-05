@@ -27,7 +27,7 @@ public class MazeManController : MonoBehaviour {
 				randomMoveState ();
 			}
 		} else {
-			if (timeCounter2 > 5 && checkMoveState ()) {
+			if (timeCounter2 > 0.5 && checkMoveState ()) {
 				last_x = transform.localPosition.x;
 				last_y = transform.localPosition.y;
 				timeCounter2 = 0;

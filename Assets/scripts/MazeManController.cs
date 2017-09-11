@@ -56,10 +56,7 @@ public class MazeManController : MonoBehaviour {
 			Debug.Log ("dec_x   " + dec_x);
 			Debug.Log ("dec_y   " + dec_y);
 			if (dec_x < 0.19 && dec_y < 0.19) {
-//				stopTimeCounter += Time.deltaTime;
-//				if (stopTimeCounter > maxStopTime) {
-					randomMoveState ();
-//				}
+				randomMoveState ();
 				return true;
 			}
 		}
@@ -68,19 +65,20 @@ public class MazeManController : MonoBehaviour {
 
 	void randomMoveState(){
 		moveFlag = Random.Range (0, 4);
-
 		Debug.Log("moveFlag     "+moveFlag);
 	}
 
-	void controlFun(){
-		if (Input.GetKey(KeyCode.W)) {
-			gameObject.transform.position += new Vector3 (0, 0.1f, 0);
-		}else if (Input.GetKey (KeyCode.A)) {
-			gameObject.transform.position += new Vector3 (-0.1f, 0, 0);
-		}else if (Input.GetKey (KeyCode.D)) {
-			gameObject.transform.position += new Vector3 (0.1f, 0, 0);
-		}else if (Input.GetKey(KeyCode.S)) {
-			gameObject.transform.position += new Vector3 (0, -0.1f, 0);
-		}
-	}
+
+
+//	void controlFun(){
+//		if (Input.GetKey(KeyCode.W)) {
+//			gameObject.transform.position += new Vector3 (0, 0.1f, 0);
+//		}else if (Input.GetKey (KeyCode.A)) {
+//			gameObject.transform.position += new Vector3 (-0.1f, 0, 0);
+//		}else if (Input.GetKey (KeyCode.D)) {
+//			gameObject.transform.position += new Vector3 (0.1f, 0, 0);
+//		}else if (Input.GetKey(KeyCode.S)) {
+//			gameObject.transform.position += new Vector3 (0, -0.1f, 0);
+//		}
+//	}
 }

@@ -52,16 +52,25 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\CameraRig.cs" />
+     <Compile Include="Assets\DrawPanel.cs" />
+     <Compile Include="Assets\Draws.cs" />
+     <Compile Include="Assets\Gizmos\DrawTexture.cs" />
      <Compile Include="Assets\Path.cs" />
      <Compile Include="Assets\RandomAi.cs" />
      <Compile Include="Assets\Run.cs" />
+     <Compile Include="Assets\scripts\DrawMapManager.cs" />
      <Compile Include="Assets\scripts\Enemy.cs" />
      <Compile Include="Assets\scripts\FighterPlayerMonement.cs" />
      <Compile Include="Assets\scripts\MazeManController.cs" />
      <Compile Include="Assets\scripts\PlayerShootControl.cs" />
      <Compile Include="Assets\scripts\Projectile.cs" />
+     <Compile Include="Assets\TestDraw\Main.cs" />
      <Compile Include="Assets\VehicleFollowing.cs" />
      <Compile Include="Assets\ZombieController.cs" />
+     <None Include="Assets\TestShader\ImgShader.shader" />
+     <None Include="Assets\TestShader\MyShader.shader" />
+     <None Include="Assets\DrawPanelDemo\panelShader.shader" />
+     <None Include="Assets\shaders\Draw.shader" />
  <Reference Include="UnityEngine.CoreModule">
  <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.CoreModule.dll</HintPath>
  </Reference>

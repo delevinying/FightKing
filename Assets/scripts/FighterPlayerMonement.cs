@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class FighterPlayerMonement : MonoBehaviour {
 
@@ -11,13 +12,21 @@ public class FighterPlayerMonement : MonoBehaviour {
 	private Vector3[] directionsForKeys;
 	public float acceleration;
 	public float maxSpeed;
+
+	private NavMeshAgent agent;
+
 	// Use this for initialization
 	void Start () {
 		inputKeys = new KeyCode[] { KeyCode.W, KeyCode.A, KeyCode.S, KeyCode.D };
 		directionsForKeys = new Vector3[] { Vector3.forward, Vector3.left, Vector3.back, Vector3.right };
 		rigidBody = GetComponent<Rigidbody>();
 	}
-	
+
+	void Update(){
+
+//		controllAgent ();
+	}
+
 	// Update is called once per frame
 	void FixedUpdate () {
 		for (int i = 0; i < inputKeys.Length; i++){
@@ -28,6 +37,26 @@ public class FighterPlayerMonement : MonoBehaviour {
 				// 3
 				Vector3 movement = directionsForKeys[i] * acceleration * Time.deltaTime;
 				movePlayer (movement);
+			}
+		}
+	}
+
+	private void getAgent(){
+		agent = GetComponent<NavMeshAgent> ();
+	}
+
+	private void controllAgent(){
+		if (Input.GetMouseButtonDown (0)) {
+			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
+			RaycastHit hit;
+			if (Physics.Raycast (ray, out hit)) {
+				Debug.Log ("地形   " + hit.collider.name);
+				if (!hit.collider.name.Equals ("Cube")) {
+					return;
+				}
+				Vector3 point = hit.point;
+				transform.LookAt (new Vector3 (point.x, point.y, point.z));
+				agent.SetDestination (point);
 			}
 		}
 	}

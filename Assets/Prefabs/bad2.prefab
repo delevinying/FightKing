@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 114336625117263128}
   - component: {fileID: 54839576872563692}
   - component: {fileID: 195511539707011734}
+  - component: {fileID: 114855384341994124}
   m_Layer: 0
   m_Name: bad2
   m_TagString: Untagged
@@ -94,8 +95,8 @@ Rigidbody:
   m_GameObject: {fileID: 1465164314333560}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Drag: 1
+  m_AngularDrag: 0.5
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -107,15 +108,29 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1465164314333560}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 854811d4d4dd343998723262150793f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
+  moveSpeed: 6
   health: 3
   damage: 1
-  targetTransform: {fileID: 0}
+  targetTransform: {fileID: 4270976641077046, guid: 7c7a4e26e7e074e3283a670e77f30e5b,
+    type: 2}
+--- !u!114 &114855384341994124
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1465164314333560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fe466bd9fbef4b3fa93949990cf8009, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startX: -15
+  startY: -15
 --- !u!136 &136128953983461796
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -123,9 +138,9 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1465164314333560}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 1
+  m_Radius: 2
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -138,7 +153,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120

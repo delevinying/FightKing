@@ -33,17 +33,5 @@ public class AgentMove : MonoBehaviour {
 				agent.SetDestination(point);  
 			}  
 		}  
-
-
-		//播放动画，判断是否到达了目的地，播放空闲或者跑步动画  
-//		if (agent.remainingDistance == 0)  
-//		{  
-//			animation.Play("idle");  
-//		}  
-//		else  
-//		{  
-//			animation.Play("run");  
-//		}  
-
 	}
 }

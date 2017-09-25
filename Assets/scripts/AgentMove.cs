@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 public class AgentMove : MonoBehaviour {
 	private NavMeshAgent agent;
+
 	// Use this for initialization
 	void Start () {
 		agent = GetComponent<NavMeshAgent>();
@@ -23,7 +24,7 @@ public class AgentMove : MonoBehaviour {
 				if (!hit.collider.name.Equals("Cube"))  
 				{  
 					return;  
-				}  
+				}
 				//点击位置坐标  
 				Vector3 point = hit.point;  
 				//转向  

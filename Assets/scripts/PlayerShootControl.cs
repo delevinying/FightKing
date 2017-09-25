@@ -4,50 +4,39 @@ using UnityEngine;
 
 public class PlayerShootControl : MonoBehaviour {
 
-	public Projectile projectilePrefab;
-	public LayerMask mask;
+	public GameObject bullet;
+	public GameObject tempBall;
+	public float speed = 20;
+	public  Camera myCamera;
 	// Use this for initialization
 	void Start () {
 		
 	}
 
-	void raycastOnMouseClick () {
-		RaycastHit hit;
-		Ray rayToFloor = Camera.main.ScreenPointToRay(Input.mousePosition);
-		Debug.DrawRay(rayToFloor.origin, rayToFloor.direction * 100.1f, Color.red, 2);
-		Debug.Log("raycastOnMouseClick    mask-- "+mask);
-		if(Physics.Raycast(rayToFloor, out hit, 100.0f, mask, QueryTriggerInteraction.Collide)) {
-//			Debug.Log("shoot    ");
-			shoot(hit);
-		}
+	void update(){
+//		shoot ();
+		Ray mouseRay=myCamera .ScreenPointToRay (Input .mousePosition );
+		tempBall=Instantiate (bullet ,mouseRay .origin ,Quaternion .identity )as GameObject;
+		tempBall.GetComponent<Rigidbody>().velocity 
+		=mouseRay .direction*speed ;
+		Destroy (tempBall ,2.5f);
 	}
 
-	// 2
-	void Update () {
-		bool mouseButtonDown = Input.GetMouseButtonDown(0);
-		if(mouseButtonDown) {
-			raycastOnMouseClick();  
+	void shoot(){
+		if (Input.GetMouseButtonDown (0)) {
+			Debug.Log ("GetMouseButtonDown   ");
+			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
+			RaycastHit hit;
+			if (Physics.Raycast (ray, out hit)) {
+				Debug.Log ("地形   " + hit.collider.name);
+				if (!hit.collider.name.Equals ("Cube")) {
+					return;
+				}
+				Vector3 point= new Vector3(transform.position.x,transform.position.y+transform.localScale.y/2,transform.position.z);  
+				//实例化一个子弹  
+				Instantiate(bullet,point,Quaternion.identity);  
+			}
 		}
-	}
 
-
-	void shoot(RaycastHit hit){
-		// 1
-		var projectile = Instantiate(projectilePrefab).GetComponent<Projectile>();
-		// 2
-		var pointAboveFloor = hit.point + new Vector3(0, this.transform.position.y, 0);
-
-		// 3
-		var direction = pointAboveFloor - transform.position;
-
-		// 4
-		var shootRay = new Ray(this.transform.position, direction);
-		Debug.DrawRay(shootRay.origin, shootRay.direction * 100.1f, Color.green, 2);
-
-		// 5
-		Physics.IgnoreCollision(GetComponent<Collider>(), projectile.GetComponent<Collider>());
-
-		// 6
-		projectile.FireProjectile(shootRay);
 	}
 }

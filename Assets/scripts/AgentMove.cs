@@ -13,8 +13,11 @@ public class AgentMove : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//鼠标左键点击  
-		if (Input.GetMouseButtonDown(0))  
+		if (Input.GetMouseButtonDown(1))  
 		{  
+			if (agent.isStopped) {
+				agent.Resume ();
+			}
 			//摄像机到点击位置的的射线  
 			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);  
 			RaycastHit hit;  
@@ -32,14 +35,19 @@ public class AgentMove : MonoBehaviour {
 				//设置寻路的目标点  
 				agent.SetDestination(point);  
 			}  
-		}  
+		}
+		Debug.Log ("x  " + transform.position.x + "z   " + transform.position.z);
+		if (transform.position.x < -13 && transform.position.z > 13) {
+			destoryMaze ();
+			this.refreshPlayerPosion ();
+		}
 	}
 
 	void OnCollisionEnter(Collision col){
-		string name = col.collider.name;
-		if (name.Equals ("upDoor")) {
-			destoryMaze ();
-		}
+//		string name = col.collider.name;
+//		if (name.Equals ("upDoor")) {
+//			destoryMaze ();
+//		}
 	}
 
 	private void destoryMaze(){
@@ -50,9 +58,7 @@ public class AgentMove : MonoBehaviour {
 	}
 
 	private void refreshPlayerPosion(){
-		GameObject[] player = GameObject.FindGameObjectsWithTag("player");
-		player[0].transform.position.x = player[0].transform.position.x + 2;
-		player[0].transform.position.y = player[0].transform.position.y + 2;
-
+		transform.position += new Vector3 (0, 0, -5);
+		agent.Stop ();
 	}
 }

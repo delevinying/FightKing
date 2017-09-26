@@ -34,4 +34,25 @@ public class AgentMove : MonoBehaviour {
 			}  
 		}  
 	}
+
+	void OnCollisionEnter(Collision col){
+		string name = col.collider.name;
+		if (name.Equals ("upDoor")) {
+			destoryMaze ();
+		}
+	}
+
+	private void destoryMaze(){
+		GameObject[] walls = GameObject.FindGameObjectsWithTag("wallItem");
+		for (int i = 0; i < walls.Length; i++) {
+			Destroy (walls [i]);
+		}
+	}
+
+	private void refreshPlayerPosion(){
+		GameObject[] player = GameObject.FindGameObjectsWithTag("player");
+		player[0].transform.position.x = player[0].transform.position.x + 2;
+		player[0].transform.position.y = player[0].transform.position.y + 2;
+
+	}
 }

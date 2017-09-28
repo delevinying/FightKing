@@ -15,11 +15,25 @@ public class PlayerShootControl : MonoBehaviour {
 
 	void update(){
 //		shoot ();
-		Ray mouseRay=myCamera .ScreenPointToRay (Input .mousePosition );
-		tempBall=Instantiate (bullet ,mouseRay .origin ,Quaternion .identity )as GameObject;
-		tempBall.GetComponent<Rigidbody>().velocity 
-		=mouseRay .direction*speed ;
-		Destroy (tempBall ,2.5f);
+
+		Ray ray = new Ray(transform.position, -transform.up);  
+		RaycastHit hit;  
+		if(Physics.Raycast(ray, out hit, Mathf.Infinity))  
+		{  
+			// 如果射线与平面碰撞，打印碰撞物体信息  
+			Debug.Log("碰撞对象: " + hit.collider.name);  
+			// 在场景视图中绘制射线  
+			Debug.DrawLine(ray.origin, hit.point, Color.red); 
+		}
+
+
+
+//
+//		Ray mouseRay= myCamera.ScreenPointToRay (Input .mousePosition );
+//		tempBall=Instantiate (bullet ,mouseRay .origin ,Quaternion .identity )as GameObject;
+//		tempBall.GetComponent<Rigidbody>().velocity 
+//		=mouseRay .direction*speed ;
+//		Destroy (tempBall ,2.5f);
 	}
 
 	void shoot(){

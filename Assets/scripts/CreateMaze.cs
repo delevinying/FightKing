@@ -11,7 +11,7 @@ public class CreateMaze : MonoBehaviour {
 	public int maxBad;//NPC的最大数量
 	private int nowFoolr = 1;//所在塔层
 	public int[,] mazeNum = null;
-	private MazeManager mazeManager;
+//	private MazeManager mazeManager;
 	private NavMeshAgent agent;//玩家的agent
 	void Start () {
 		initState ();
@@ -25,9 +25,11 @@ public class CreateMaze : MonoBehaviour {
 	private void initState(){
 		this.mazeNum = MazeArray.getArray (this.nowFoolr - 1);//当前在第一层
 		drawWall ();//开始绘制
-		mazeManager = MazeManager.GetInstance ();
+//		mazeManager = MazeManager.GetInstance ();
 		agent = GetComponent<NavMeshAgent>();
 	}
+
+
 
 	//绘制墙
 	private void drawWall(){
@@ -69,10 +71,10 @@ public class CreateMaze : MonoBehaviour {
 				agent.SetDestination(point);  
 			}  
 		}
-		Debug.Log ("x  " + transform.position.x + "z   " + transform.position.z);
+//		Debug.Log ("x  " + transform.position.x + "z   " + transform.position.z);
 		if (transform.position.x < -13 && transform.position.z > 13) {
-			destoryMaze ();
-			this.refreshPlayerPosion ();
+//			destoryMaze ();
+//			this.refreshPlayerPosion ();
 		}
 	}
 

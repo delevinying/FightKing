@@ -11,22 +11,43 @@ public class BadAgentMove : MonoBehaviour {
 	private float tempX = -100;
 	private float tempY = -100;
 	private bool isflag = false;
+	public GameObject PopupDamage;
 	// Use this for initialization
 	void Start () {
-		agent = GetComponent<NavMeshAgent>();
-		goPosition ();
+		initState ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		doAgent ();
+	}
+
+	void OnTriggerEnter(Collider collider){
+		if(collider.gameObject.tag=="player")
+		{
+			//克隆伤害弹出组件
+			Vector3 position  = collider.gameObject.transform.position;
+			GameObject mObject=(GameObject)Instantiate(PopupDamage,position,Quaternion.identity);
+			mObject.GetComponent<DamagePopup>().values=Random.Range(-200,-10);
+		}
+	}
+
+//	void 
+
+	private void initState(){
+		agent = GetComponent<NavMeshAgent>();
+		goPosition ();
+	}
+
+	private void doAgent(){
 		if (tempX == this.gameObject.transform.position.x && tempY == this.gameObject.transform.position.y) {
 			tempTime += Time.deltaTime;
-			Debug.Log ("   " + tempTime);
+//			Debug.Log ("   " + tempTime);
 		}
 		tempX = this.gameObject.transform.position.x;
 		tempY = this.gameObject.transform.position.y;
 		if (tempTime > 0.5) {
-			Debug.Log("isFlag   " + isflag);
+//			Debug.Log("isFlag   " + isflag);
 			if (isflag) {
 				goPosition ();
 				isflag = false;

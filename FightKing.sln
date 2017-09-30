@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FightKing", "Assembly-CSharp.csproj", "{FFFCF286-7738-1753-CA85-8AC4E3DEEE8D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FightKing", "Assembly-CSharp-Editor.csproj", "{16F20093-1BB3-5D0A-5092-140106C98CAC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{FFFCF286-7738-1753-CA85-8AC4E3DEEE8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FFFCF286-7738-1753-CA85-8AC4E3DEEE8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FFFCF286-7738-1753-CA85-8AC4E3DEEE8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16F20093-1BB3-5D0A-5092-140106C98CAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16F20093-1BB3-5D0A-5092-140106C98CAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16F20093-1BB3-5D0A-5092-140106C98CAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16F20093-1BB3-5D0A-5092-140106C98CAC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

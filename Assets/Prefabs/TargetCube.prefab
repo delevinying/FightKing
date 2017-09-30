@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 23355465061340516}
   - component: {fileID: 54709343802306808}
   - component: {fileID: 208514095684511696}
+  - component: {fileID: 114550995802763164}
   m_Layer: 0
   m_Name: TargetCube
   m_TagString: wallItem
@@ -112,6 +113,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114550995802763164
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1771123225125110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 499f808141ee54528ac31a0fc9af6d05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!208 &208514095684511696
 NavMeshObstacle:
   m_ObjectHideFlags: 1

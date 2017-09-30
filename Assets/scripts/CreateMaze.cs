@@ -51,7 +51,7 @@ public class CreateMaze : MonoBehaviour {
 		if (Input.GetMouseButtonDown(1))  
 		{  
 			if (agent.isStopped) {
-				agent.Resume ();
+			//	agent.Resume ();
 			}
 			//摄像机到点击位置的的射线  
 			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);  
@@ -87,7 +87,7 @@ public class CreateMaze : MonoBehaviour {
 
 	private void refreshPlayerPosion(){
 		transform.position += new Vector3 (0, 0, -5);
-		agent.Stop ();
+//		agent.Stop ();
 	}
 		
 }

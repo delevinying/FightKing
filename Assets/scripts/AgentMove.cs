@@ -21,6 +21,6 @@ public class AgentMove : MonoBehaviour {
 
 	private void refreshPlayerPosion(){
 		transform.position += new Vector3 (0, 0, -5);
-		agent.Stop ();
+		//agent.Stop ();
 	}
 }

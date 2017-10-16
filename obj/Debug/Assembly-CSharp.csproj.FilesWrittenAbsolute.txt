@@ -69,3 +69,5 @@
 /Users/easonzhou/Desktop/FightKing/FightKing/Temp/bin/Debug/Assembly-CSharp.dll
 /Users/easonzhou/Desktop/FightKing/FightKing/obj/Debug/Assembly-CSharp.dll
 /Users/easonzhou/Desktop/FightKing/FightKing/obj/Debug/Assembly-CSharp.dll.mdb
+/Users/easonzhou/Desktop/FightKing/FightKing/Temp/bin/Debug/ChannelPurchase.dll
+/Users/easonzhou/Desktop/FightKing/FightKing/Temp/bin/Debug/UnityStore.dll

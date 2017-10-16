@@ -22,15 +22,15 @@ public class BadAgentMove : MonoBehaviour {
 		doAgent ();
 	}
 
-	void OnTriggerEnter(Collider collider){
-		if(collider.gameObject.tag=="player")
-		{
-			//克隆伤害弹出组件
-			Vector3 position  = collider.gameObject.transform.position;
-			GameObject mObject=(GameObject)Instantiate(PopupDamage,position,Quaternion.identity);
-			mObject.GetComponent<DamagePopup>().values=Random.Range(-200,-10);
-		}
-	}
+//	void OnTriggerEnter(Collider collider){
+//		if(collider.gameObject.tag=="player")
+//		{
+//			//克隆伤害弹出组件
+//			Vector3 position  = collider.gameObject.transform.position;
+//			GameObject mObject=(GameObject)Instantiate(PopupDamage,position,Quaternion.identity);
+//			mObject.GetComponent<DamagePopup>().values=Random.Range(-200,-10);
+//		}
+//	}
 
 //	void 
 

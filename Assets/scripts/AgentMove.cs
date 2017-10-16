@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 public class AgentMove : MonoBehaviour {
-	private NavMeshAgent agent;
+//	private NavMeshAgent agent;
 	void Start () {
-		agent = GetComponent<NavMeshAgent>();
+//		agent = GetComponent<NavMeshAgent>();
 	}
 
 	void Update () {
